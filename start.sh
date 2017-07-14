@@ -7,4 +7,4 @@ chown -R blynk:blynk /blynk
 chown -R blynk:blynk /data
 chown -R blynk:blynk /config
 
-chpst -u blynk:blynk -- bash -c 'java -jar /blynk/server.jar -dataFolder /data -serverConfig /config/server.properties'
+chpst -u blynk:blynk -- bash -c 'java -jar /blynk/server.jar -dataFolder /data -serverConfig /config/server.properties -mailConfig /config/mail.properties'

@@ -35,5 +35,5 @@ RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" >> /
 EXPOSE 8080 8081 8082 8441 8442 8443 9443
 VOLUME /config /data
 
-WORKDIR /data
+WORKDIR /config
 ENTRYPOINT ["/usr/local/bin/tini", "--", "/usr/bin/start.sh"]
