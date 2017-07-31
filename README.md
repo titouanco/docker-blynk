@@ -36,7 +36,5 @@ server.ssl.key.pass=<.. .key password ..>
 data.folder=/data
 logs.folder=/data/logs
 
-enable.native.epoll.transport=true
-enable.native.openssl=true
 ...
 ```
