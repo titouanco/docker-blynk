@@ -10,8 +10,6 @@ ENV UID="991" \
 
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/local/bin/tini
 
-COPY start.sh /usr/bin/start.sh
-
 RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" >> /etc/apt/sources.list \
     && /usr/bin/get-gpg-key 0x7B2C3B0889BF5709A105D03AC2518248EEA14886 | apt-key add \
     && apt-get update \
@@ -21,8 +19,10 @@ RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" >> /
     && mkdir /blynk \
     && curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_VERSION}/server-${BLYNK_VERSION}.jar > /blynk/server.jar \
     && chmod +x /usr/local/bin/tini \
-    && chmod +x /usr/bin/start.sh \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+COPY start.sh /usr/bin/start.sh
+RUN chmod +x /usr/bin/start.sh
 
 # IP port listing:
 # 8443: Application mutual ssl/tls port

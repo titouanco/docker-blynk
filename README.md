@@ -1,4 +1,10 @@
-# Docker Blynk Server
+# 🐳 eownis/blynk-server
+
+[![build status](https://gitlab.com/eownis/docker-blynk/badges/master/build.svg)](https://gitlab.com/eownis/docker-blynk/commits/master)
+
+[![](https://images.microbadger.com/badges/version/eownis/blynk-server.svg)](https://microbadger.com/images/eownis/blynk-server "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/eownis/blynk-server.svg)](https://microbadger.com/images/eownis/blynk-server "Get your own image badge on microbadger.com")
+
+[Blynk Server](https://www.blynk.cc). Built by [GitLab CI](https://gitlab.com/eownis/docker-gitea/pipelines).
 
 ## Usage
 
