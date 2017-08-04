@@ -1,4 +1,4 @@
-FROM blitznote/debootstrap-amd64:16.04
+FROM openjdk:8-jdk-alpine
 LABEL maintainer "Titouan Condé <eownis+docker@titouan.co>"
 LABEL org.label-schema.vcs-url="https://gitlab.com/eownis/docker-blynk"
 
@@ -8,18 +8,10 @@ ARG BLYNK_VERSION=0.26.1
 ENV UID="991" \
     GID="991"
 
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/local/bin/tini
-
-RUN echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" >> /etc/apt/sources.list \
-    && /usr/bin/get-gpg-key 0x7B2C3B0889BF5709A105D03AC2518248EEA14886 | apt-key add \
-    && apt-get update \
-    && echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
-    && echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections \
-    && apt-get install -y oracle-java8-installer \
+RUN apk add --no-cache curl runit tini \
     && mkdir /blynk \
     && curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_VERSION}/server-${BLYNK_VERSION}.jar > /blynk/server.jar \
-    && chmod +x /usr/local/bin/tini \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+    && apk del curl
 
 COPY start.sh /usr/bin/start.sh
 RUN chmod +x /usr/bin/start.sh
@@ -36,4 +28,4 @@ EXPOSE 8080 8081 8082 8441 8442 8443 9443
 VOLUME /config /data
 
 WORKDIR /config
-ENTRYPOINT ["/usr/local/bin/tini", "--", "/usr/bin/start.sh"]
+ENTRYPOINT ["/sbin/tini", "--", "/usr/bin/start.sh"]
