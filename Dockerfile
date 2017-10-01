@@ -3,14 +3,14 @@ LABEL maintainer "Titouan Condé <eownis+docker@titouan.co>"
 LABEL org.label-schema.name="Blynk Server"
 LABEL org.label-schema.vcs-url="https://git.titouan.co/eownis/docker-blynk"
 
-ARG BLYNK_VERSION=0.27.2
+ARG BLYNK_VERSION=0.28.0
 
 ENV UID="991" \
     GID="991"
 
 RUN apk add --no-cache curl runit tini \
     && mkdir /blynk \
-    && curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_VERSION}/server-${BLYNK_VERSION}.jar > /blynk/server.jar \
+    && curl -L https://github.com/blynkkk/blynk-server/releases/download/v${BLYNK_VERSION}/server-${BLYNK_VERSION}-java8.jar > /blynk/server.jar \
     && apk del curl
 
 COPY start.sh /usr/bin/start.sh
