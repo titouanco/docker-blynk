@@ -1,0 +1,7 @@
+pipeline:
+  docker:
+    image: plugins/docker
+    repo: eownis/blynk-server
+    storage_driver: overlay2
+    secrets: [ docker_username, docker_password ]
+    tags: latest
