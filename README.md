@@ -17,10 +17,7 @@
     restart: always
     ports:
       - "9443:9443"
-      - "8442:8442"
       - "8441:8441"
-      - "8081:8081"
-      - "8082:8082"
       - "8080:8080"
     volumes:
       - ./blynk-server/config:/config
