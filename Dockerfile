@@ -3,7 +3,7 @@ LABEL maintainer "Titouan Condé <hi+docker@titouan.co>"
 LABEL org.label-schema.name="Blynk Server"
 LABEL org.label-schema.vcs-url="https://git.titouan.co/t/docker-blynk"
 
-ARG BLYNK_VERSION=0.38.4
+ARG BLYNK_VERSION=0.38.5
 
 ENV UID="991" \
     GID="991"
