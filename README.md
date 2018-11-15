@@ -1,10 +1,10 @@
 # 🐳 eownis/blynk-server
 
-[![build status](https://drone.titouan.co/api/badges/docker/blynk/status.svg)](https://drone.titouan.co/docker/blynk)
+[![build status](https://cd.code.titouan.co/api/badges/titouan/docker-blynk/status.svg)](https://cd.code.titouan.co/titouan/docker-blynk)
 
 [![](https://images.microbadger.com/badges/version/eownis/blynk-server.svg)](https://microbadger.com/images/eownis/blynk-server "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/image/eownis/blynk-server.svg)](https://microbadger.com/images/eownis/blynk-server "Get your own image badge on microbadger.com")
 
-[Blynk Server](https://www.blynk.cc). Built by [Drone](https://drone.titouan.co/docker/blynk) and pushed to [Docker Hub](https://hub.docker.com/r/eownis/blynk-server/).
+[Blynk Server](https://www.blynk.cc). Built by [Drone](https://cd.code.titouan.co/titouan/docker-blynk) and pushed to [Docker Hub](https://hub.docker.com/r/eownis/blynk-server/).
 
 ## Usage
 

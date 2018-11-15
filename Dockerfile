@@ -1,9 +1,9 @@
 FROM openjdk:8-jdk-alpine
 LABEL maintainer "Titouan Condé <hi+docker@titouan.co>"
 LABEL org.label-schema.name="Blynk Server"
-LABEL org.label-schema.vcs-url="https://git.tycho.space/docker/blynk"
+LABEL org.label-schema.vcs-url="https://code.titouan.co/titouan/docker-blynk"
 
-ARG BLYNK_VERSION=0.39.5
+ARG BLYNK_VERSION=0.41.0
 
 ENV UID="991" \
     GID="991"
